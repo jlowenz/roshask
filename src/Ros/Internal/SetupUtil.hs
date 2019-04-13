@@ -9,13 +9,16 @@ import Distribution.Simple
 import Distribution.Simple.InstallDirs
 import Distribution.Simple.LocalBuildInfo
 import Distribution.Simple.Setup
+import Distribution.Types.UnqualComponentName
 import Distribution.PackageDescription hiding (Library)
 import System.Directory (getCurrentDirectory)
 import System.FilePath ((</>))
 import Ros.Internal.DepFinder
 
-data Buildable = LibraryAndExecutables [String] 
-               | Executables [String]
+data Buildable = LibraryAndExecutables [UnqualComponentName] 
+               | Executables [UnqualComponentName]
+
+mkHookedBuildInfo binfo = (,binfo) . mkUnqualComponentName
 
 -- Add the message directories of the package's we are dependent on to
 -- GHC's path.

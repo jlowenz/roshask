@@ -10,6 +10,7 @@ import Data.Dynamic
 import Data.Map (Map)
 import qualified Data.Map as M
 import Data.Set (Set)
+import Data.Typeable
 import qualified Data.Set as S
 import Control.Concurrent (ThreadId)
 import Ros.Internal.RosTypes (URI)

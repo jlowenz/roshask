@@ -248,7 +248,7 @@ weightedMeanNormalized alpha invAlpha plus scale normalize = Topic . warmup
 -- by a fractional number.
 simpsonsRule :: (Monad m, Fractional n) => 
                 (a -> a -> a) -> (n -> a -> a) -> Topic m a -> Topic m a
-simpsonsRule plus scale t0 = Topic $ do ([x,y], t') <- splitAt 2 t0
+simpsonsRule plus scale t0 = Topic $ do ~([x,y], t') <- splitAt 2 t0
                                         go x y t'
   where go x y t = do (z,t') <- runTopic t
                       return (simpson x y z, Topic $ go y z t')

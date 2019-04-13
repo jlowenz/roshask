@@ -2,7 +2,7 @@
 -- message types. This module is used by the automatically-generated
 -- code for ROS .msg types.
 module Ros.Node.BinaryIter (streamIn, getServiceResult) where
-import Control.Applicative
+-- import Control.Applicative
 import Control.Concurrent (myThreadId, killThread)
 import Control.Monad.IO.Class
 import Control.Monad.Trans.Maybe
